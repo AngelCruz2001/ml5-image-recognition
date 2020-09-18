@@ -1,0 +1,11 @@
+body {
+    padding: 20px;
+}
+.marco {
+    border: 3px solid green;
+}
+
+.tag {
+    background-color: black;
+    color: white;
+}
