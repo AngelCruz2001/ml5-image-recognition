@@ -1,3 +1,4 @@
+import { Proccess } from './Proccess';
 import React, { useState } from 'react'
 import Webcam from "react-webcam";
 import { getModel } from '../../helpers/video/getModel';
@@ -7,7 +8,7 @@ import { Predictions } from './Predictions';
 import './videoScreen.css';
 
 export const VideoScreen = () => {
-    const [run, setRun] = useState(true);
+    const [run, setRun] = useState(false);
     const [results, setResults] = useState([{ label: "", confidence: "", x: "", y: "", width: "", height: "" }])
 
 
@@ -23,14 +24,7 @@ export const VideoScreen = () => {
                 .then((results) => {
                     setResults(results);
                 })
-            if (run) {
-                console.log(run)
-                startDetection(model, video)
-            } else {
-
-                console.log("Apagado")
-            }
-
+            startDetection(model, video)
         }, 1500);
     }
 
@@ -47,12 +41,12 @@ export const VideoScreen = () => {
 
     return (
         <div>
-            <h1>Video Recognition <span class="badge badge-secondary">ML5</span></h1>
+            <h1>Video Recognition <span className="badge badge-secondary">ML5</span></h1>
 
             <div className="row">
                 <div className="col-6">
                     <div>
-
+                    
                         {results.map(({ x, y, width, height, label }, i) => (
                             <Marco
                                 key={i}

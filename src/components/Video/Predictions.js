@@ -8,7 +8,6 @@ export const Predictions = ({ label, confidence }) => {
                     <p>Label: {label} </p>
                     <p>Confidence: {confidence} </p>
                 </div>
-
                 :
                 <blockquote className="blockquote">
                     <footer className="blockquote-footer mt-4" style={{ fontSize: 30 }}>To start with the searching please click "Analyze" </footer>
